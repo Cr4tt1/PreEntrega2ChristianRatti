@@ -1,11 +1,18 @@
-import React from "react";
-import "./style.css";
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-export default function App() {
-  return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
-    </div>
-  );
-}
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+
+const App = () => (
+  <BrowserRouter>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/contact" component={Contact} />
+    </Switch>
+  </BrowserRouter>
+);
+
+export default App;
